@@ -31,10 +31,6 @@ export class App extends Component {
     );
   }
 
-  firstLetterToUpperCase(word) {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  }
-
   render() {
     return (
       <>
@@ -42,19 +38,17 @@ export class App extends Component {
           <FeedbackOptions
             feedbackCategories={this.categories}
             onLeaveFeedback={this.onLeaveFeedback}
-            firstLetterToUpperCase={this.firstLetterToUpperCase}
           />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() <= 0 ? (
-            <Notification message="Tere is no Feedback" />
+            <Notification message="There is no Feedback" />
           ) : (
             <Statistics
               options={this.state}
               feedbackCategories={this.categories}
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}
-              firstLetterToUpperCase={this.firstLetterToUpperCase}
             />
           )}
         </Section>

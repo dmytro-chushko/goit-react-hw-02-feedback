@@ -14,3 +14,7 @@ ul {
   font-weight: 700;
   font-size: 18px;
 }
+
+.statisticsItem::first-letter {
+  text-transform: uppercase;
+}

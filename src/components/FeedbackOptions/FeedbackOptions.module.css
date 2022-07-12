@@ -10,3 +10,7 @@
 .categoryButton:not(:last-of-type) {
   margin-right: 10px;
 }
+
+.categoryButton::first-letter {
+  text-transform: uppercase;
+}

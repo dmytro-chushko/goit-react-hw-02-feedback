@@ -6,17 +6,14 @@ const Statistics = ({
   feedbackCategories,
   total,
   positivePercentage,
-  firstLetterToUpperCase,
 }) => (
   <>
     <ul>
       {feedbackCategories.map(item => {
         return (
-          options[item] > 0 && (
-            <li className={css.statisticsItem} key={item}>
-              {firstLetterToUpperCase(item)}: {options[item]}
-            </li>
-          )
+          <li className={css.statisticsItem} key={item}>
+            {item}: {options[item]}
+          </li>
         );
       })}
       <li className={css.statisticsItem}>Total: {total}</li>
@@ -36,7 +33,6 @@ Statistics.propTypes = {
   feedbackCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
-  firstLetterToUpperCase: PropTypes.func.isRequired,
 };
 
 export default Statistics;

@@ -1,11 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
 
-const FeedbackOptions = ({
-  feedbackCategories,
-  onLeaveFeedback,
-  firstLetterToUpperCase,
-}) => (
+const FeedbackOptions = ({ feedbackCategories, onLeaveFeedback }) => (
   <div className={css.buttonsContainer}>
     {feedbackCategories.map(item => (
       <button
@@ -15,7 +11,7 @@ const FeedbackOptions = ({
         name={item}
         onClick={onLeaveFeedback}
       >
-        {firstLetterToUpperCase(item)}
+        {item}
       </button>
     ))}
   </div>
@@ -24,7 +20,6 @@ const FeedbackOptions = ({
 FeedbackOptions.propTypes = {
   feedbackCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
-  firstLetterToUpperCase: PropTypes.func.isRequired,
 };
 
 export default FeedbackOptions;
